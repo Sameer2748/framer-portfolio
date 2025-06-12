@@ -1,0 +1,234 @@
+---
+title: 'Advanced Git Techniques'
+description: 'Master advanced Git concepts and workflows for better version control and team collaboration.'
+image: '/images/blog/git.png'
+date: '2024-05-01'
+---
+
+# Advanced Git Techniques and Best Practices
+
+## Beyond Basic Git Commands
+
+Git is more than just `commit`, `push`, and `pull`. Let's explore advanced techniques that can improve your version control workflow.
+
+## Advanced Branching Strategies
+
+### Git Flow Model
+```bash
+# Initialize git flow
+git flow init
+
+# Start a new feature
+git flow feature start my-feature
+
+# Finish a feature
+git flow feature finish my-feature
+
+# Start a hotfix
+git flow hotfix start bug-fix
+```
+
+### Branch Management
+```bash
+# List all branches with latest commits
+git branch -v
+
+# Delete merged branches
+git branch --merged | grep -v "\*" | xargs -n 1 git branch -d
+
+# Show branch hierarchy
+git log --graph --oneline --all
+```
+
+## Interactive Rebase
+
+### Cleaning Up Commits
+```bash
+# Start interactive rebase
+git rebase -i HEAD~3
+
+# Commands available in rebase:
+# p, pick = use commit
+# r, reword = use commit, but edit the commit message
+# e, edit = use commit, but stop for amending
+# s, squash = use commit, but meld into previous commit
+# f, fixup = like "squash", but discard this commit's log message
+```
+
+## Advanced Git Commands
+
+### Bisect for Bug Hunting
+```bash
+# Start bisect
+git bisect start
+
+# Mark current version as bad
+git bisect bad
+
+# Mark last known good version
+git bisect good v1.0
+
+# Git will checkout commits for you to test
+# Mark each as good or bad until found
+git bisect good  # or
+git bisect bad
+
+# End bisect
+git bisect reset
+```
+
+### Cherry-picking
+```bash
+# Cherry-pick a specific commit
+git cherry-pick abc123
+
+# Cherry-pick without committing
+git cherry-pick -n abc123
+
+# Cherry-pick a range of commits
+git cherry-pick abc123..def456
+```
+
+## Git Hooks
+
+### Pre-commit Hook Example
+```bash
+#!/bin/sh
+# .git/hooks/pre-commit
+
+# Run tests before commit
+npm test
+
+# Check code formatting
+npm run lint
+
+# Exit with non-zero status if any commands fail
+```
+
+### Commit Message Hook
+```bash
+#!/bin/sh
+# .git/hooks/commit-msg
+
+# Enforce conventional commits
+if ! grep -qE '^(feat|fix|docs|style|refactor|test|chore): .+' "$1"; then
+    echo "Commit message must follow conventional commits format"
+    exit 1
+fi
+```
+
+## Advanced Git Configuration
+
+### Global Git Config
+```bash
+# Set up aliases
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+
+# Custom log format
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+```
+
+## Git Worktree
+
+### Managing Multiple Working Trees
+```bash
+# Create a new worktree
+git worktree add ../feature-branch feature
+
+# List worktrees
+git worktree list
+
+# Remove a worktree
+git worktree remove ../feature-branch
+```
+
+## Advanced Merge Techniques
+
+### Merge Strategies
+```bash
+# Recursive strategy with patience algorithm
+git merge --strategy-option=patience feature
+
+# Octopus merge for multiple branches
+git merge branch1 branch2 branch3
+
+# Rebase merge
+git merge --rebase feature
+```
+
+## Git for Large Projects
+
+### Partial Clone and Sparse Checkout
+```bash
+# Clone with limited history
+git clone --depth 1 repository-url
+
+# Sparse checkout
+git sparse-checkout set folder1/ folder2/
+
+# Update sparse checkout
+git sparse-checkout add folder3/
+```
+
+## Best Practices
+
+1. **Commit Messages**
+   ```bash
+   # Good commit message format
+   feat: add new user authentication system
+   
+   - Implement JWT tokens
+   - Add password hashing
+   - Create user sessions
+   ```
+
+2. **Branch Naming**
+   ```bash
+   feature/user-auth
+   bugfix/login-error
+   hotfix/security-patch
+   release/v1.2.0
+   ```
+
+3. **Git Attributes**
+   ```gitattributes
+   # Auto detect text files and perform LF normalization
+   * text=auto
+
+   # Declare files that will always have CRLF line endings
+   *.bat text eol=crlf
+
+   # Denote binary files
+   *.png binary
+   *.jpg binary
+   ```
+
+## Troubleshooting
+
+### Common Issues and Solutions
+```bash
+# Fix detached HEAD
+git checkout main
+
+# Recover lost commits
+git reflog
+git checkout HEAD@{1}
+
+# Undo last commit
+git reset --soft HEAD^
+
+# Clean untracked files
+git clean -fd
+```
+
+## Conclusion
+
+Mastering these advanced Git techniques can significantly improve your development workflow and make you more efficient at version control.
+
+## Resources
+- [Git Documentation](https://git-scm.com/doc)
+- [Pro Git Book](https://git-scm.com/book/en/v2)
+- [Git Flow Documentation](https://nvie.com/posts/a-successful-git-branching-model/)

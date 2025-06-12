@@ -2,8 +2,9 @@
 import React, { useState } from 'react'
 import Container from '../Container'
 import Image from 'next/image'
-import Link from 'next/link'
-import {easeInOut, motion, useMotionValueEvent, useScroll} from "motion/react"
+
+import {easeInOut, motion, useMotionValueEvent, useScroll, useTransform} from "motion/react"
+import { Link } from 'next-view-transitions';
 
 const Navbar = () => {
     const navItems = [
@@ -13,7 +14,7 @@ const Navbar = () => {
         },
         {
             title:"Projects",
-            href:"#projects"
+            href:"/projects"
         },
         {
             title:"Contact",
@@ -31,6 +32,9 @@ const Navbar = () => {
 
     const {scrollY} = useScroll()
 
+    const y  = useTransform(scrollY, [0, 100], [0,10]);
+    const width  = useTransform(scrollY, [0, 100], ["65", "50%"]);
+
 
     useMotionValueEvent(scrollY, "change", (latest)=>{
         if(latest> 20){
@@ -47,17 +51,19 @@ const Navbar = () => {
     <Container className=''>
       <motion.nav 
       
-      animate={{
+      style={{
         boxShadow: scrolled ? "var(--shadow-box)": "none",
-        width: scrolled ? "50%": "100%",
-        y: scrolled ? 10 : 0
+        width,
+        y
       }}
       transition={{
         duration: 0.3 ,
         ease:'linear'
       }}
       className='fixed top-0 inset-x-0 left-0 z-50  max-w-4xl mx-auto flex items-center justify-between p-2 rounded-3xl bg-white'>
+        <Link href="/">
         <Image className='w-12 h-13 rounded-full ' src="/avatar.png" alt="image" width={100} height={100} />
+        </Link>
         <div className='flex items-center'>
             {
                 navItems.map((item, idx)=>(

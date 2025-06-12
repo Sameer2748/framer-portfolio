@@ -1,15 +1,25 @@
 import Container from "@/components/Container";
+
+import Heading from "@/components/Heading";
+import HomeBlogs from "@/components/HomeBlogs";
 import Projects from "@/components/Projects";
+import SubHeading from "@/components/SubHeading";
 import Image from "next/image";
+import {projects} from "@/Constants/Projects"
+import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
 
   return (
     <div className="min-h-screen flex justify-start items-start">
-      <Container className="min-h-[200vh] px-10 md:pt-20 md:pb-10">
-        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-primary">Sameer Rao</h1>
-        <p className="text-secondary max-w-lg text-sm md:text-base pt-4 ">I'm a software developer with passion for building scalable and effecient systems. I'm currently working as full stack developer at StoryTent.</p>
-      <Projects/>
+      <Container className="min-h-screen px-10 md:pt-20 md:pb-10">
+        <Heading as="h6">Sameer Rao</Heading>
+        <SubHeading>
+        I'm a software developer with passion for building scalable and effecient systems. I'm currently working as full stack developer at StoryTent.
+        </SubHeading>
+      <Projects Projects={projects.slice(0,3)} />
+      <HomeBlogs/>
+      <Testimonials />
       </Container>
     </div>
   );

@@ -5,6 +5,7 @@ import createMDX from '@next/mdx'
 const nextConfig: NextConfig = {
   /* config options here */
     pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+    transpilePackages:["next-mdx-remote"],
 
   images:{
     remotePatterns:[
@@ -14,16 +15,13 @@ const nextConfig: NextConfig = {
       {
         hostname:"cdn1.roundasspics.com"
       },
+      {
+        hostname:"images.unsplash.com"
+      },
     ]
   }
 };
 
  
-const withMDX = createMDX({
-  // Add markdown plugins here, as desired
-    extension: /\.(md|mdx)$/,
 
-
-})
-
-export default withMDX(nextConfig)
+export default nextConfig
