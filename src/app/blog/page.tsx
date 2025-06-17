@@ -35,8 +35,16 @@ export default async function BlogsPage() {
               <Link href={`/blog/${blog.slug}`} key={idx}>
                 <div className="flex  items-center justify-between ">
                   <h2 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">{blog.title}</h2>
-                  <p className="text-secondary  text-sm md:text-sm ">{new Date(blog.date).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}
-                  </p>
+{blog.date && (
+  <p className="text-secondary text-sm md:text-sm">
+    {new Date(blog.date).toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}
+  </p>
+)}
                 </div>
                 <p className="text-secondary max-w-lg  pt-2 text-sm md:text-sm ">{truncate(blog.description || "", 150)} </p>
               </Link>

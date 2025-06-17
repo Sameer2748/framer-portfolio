@@ -6,7 +6,7 @@ import ProjectClient from '@/components/ProjectClient'; // the client component
 
 import { getProjectData } from '@/utils/getProjectData.server';
 
-export default async function ProjectDetailsPage({ params }: { params: { slug: string } }) {
+export default async function ProjectDetailsPage({ params }: { params: any }) {
   const slug = await (params.slug);
   const project =  getProjectData(slug);
   if (!project) return notFound();

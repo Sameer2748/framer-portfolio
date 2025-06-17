@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Project, projects as defaultProps } from "@/Constants/Projects"
 import SectionHeading from './Section-Heading';
 
-const Projects = ({ Projects = defaultProps, grid }: { Projects: Project[], grid?: number }) => {
+const Projects = ({ Projects = defaultProps, grid }: { Projects?: Project[], grid?: number }) => {
 
     return (
         <div className='border-y border-neutral-100 my-4 px-4 py-4 shadow-minimal-inner' id='projects'>

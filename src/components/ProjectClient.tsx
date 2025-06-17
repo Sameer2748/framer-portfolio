@@ -16,8 +16,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import DummySwiper from './DummySwiper';
 import { TbBrandGithub, TbBrandLivewire } from 'react-icons/tb';
+export interface Project {
+  title: string;
+  src: string;
+  description: string;
+  href: string;
+  github?: string;
+  live?: string;
+  images?: string[];
+  technologies?: string[];
+  tools?: string[];
+  features?: string[];
+}
 
-const ProjectClient = ({ project }) => {
+const ProjectClient = ({ project}:{project:Project }) => {
     return (
         <div className='px-8'>
 
@@ -29,12 +41,16 @@ const ProjectClient = ({ project }) => {
                     <h1 className="text-4xl text-black font-bold text-center ">{project.title}</h1>
                 </div>
                 <div className='flex flex-col sm:flex-row  gap-4 mb-2 pt-1 '>
-                    <Link href={project.github} target="_blank" className="underline text-gray-700 border rounded-full border-gray-800 p-1">
-                        <TbBrandGithub color='black' size={25} />
-                    </Link>
-                    <Link href={project.live} target="_blank" className="underline text-gray-700 border rounded-full border-gray-800 p-1">
-                        <FaGlobe color='black' size={25} />
-                    </Link>
+                    {project.github && (
+            <Link href={project.github} target="_blank" className="underline text-gray-700 border rounded-full border-gray-800 p-1">
+              <TbBrandGithub color='black' size={25} />
+            </Link>
+          )}
+          {project.live && (
+            <Link href={project.live} target="_blank" className="underline text-gray-700 border rounded-full border-gray-800 p-1">
+              <FaGlobe color='black' size={25} />
+            </Link>
+          )}
                 </div>
             </div>
             <div className="mb-6  space-y-2">

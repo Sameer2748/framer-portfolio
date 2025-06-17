@@ -30,7 +30,7 @@ const DummySwiper = ({images}:{images:any}) => {
         slidesPerView={1}
         loop
       >
-        {images.map((src, index) => (
+        {images.map((src:string, index:number) => (
           <SwiperSlide key={index}>
             <img
               src={src}

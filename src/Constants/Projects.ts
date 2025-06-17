@@ -1,9 +1,11 @@
 export type Project = {
-    title: String;
-    src: String;
+    title: string;
+    src: string;
     description: string;
     href: string;
+    images?:any;
 }
+
 
 export const projects: Project[] = [
     {

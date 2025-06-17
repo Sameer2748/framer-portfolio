@@ -24,8 +24,16 @@ const HomeBlogs = async () => {
                     <Link href={`/blog/${blog.slug}`} >
                         <div className="flex  items-center justify-between ">
                             <h2 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">{blog.title}</h2>
-                            <p className="text-secondary  text-sm md:text-sm ">{new Date(blog.date).toLocaleDateString('en-us', { weekday: "long", year: "numeric", month: "short", day: "numeric" })}
-                            </p>
+                            {blog.date && (
+  <p className="text-secondary text-sm md:text-sm">
+    {new Date(blog.date).toLocaleDateString("en-us", {
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })}
+  </p>
+)}
                         </div>
                         <p className="text-secondary max-w-lg  pt-4 text-sm md:text-sm ">{truncate(blog.description || "", 120)} </p>
                     </Link>

@@ -1,12 +1,10 @@
-"use client";
+'use client';
+import { motion } from "motion/react";
+import type { MotionProps } from "motion/react";
+import React from "react";
 
-import React from 'react'
-import {motion, AnimationProps} from "motion/react"
+const MotionDiv = (props: MotionProps & { children?: React.ReactNode }) => {
+  return <motion.div {...props}>{props.children}</motion.div>;
+};
 
-const MotionDiv = (props:AnimationProps & {children?: React.ReactNode}) => {
-  return (
-    <motion.div {...props} />
-  )
-}
-
-export default MotionDiv
+export default MotionDiv;
