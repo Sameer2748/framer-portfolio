@@ -1,0 +1,27 @@
+{
+  "title": "Voom - Video Conferencing",
+  "description": "A modern video conferencing application built with WebRTC, enabling real-time video calls, instant messaging, and screen sharing capabilities in a user-friendly interface.",
+  "technologies": ["Next.js", "WebRTC", "Socket.io", "TailwindCSS", "Express.js"],
+  "image": "/Zoom-Clone.png",
+      "images": ["/Zoom-Clone.png", "/zoom-1.png", "/zoom-2.png", "/zoom-3.png"],
+
+  "github": "https://github.com/Sameer2748/Zoom-clone",
+  "live": "https://zoom-clone-puce-tau.vercel.app/",
+  "features": [
+    "Real-time video and audio communication",
+    "Screen sharing and presentation mode",
+    "In-meeting chat functionality",
+    "Meeting recording capabilities",
+    "Virtual background effects",
+    "Participant management controls"
+  ],
+  "duration": "Mar 2024 – May 2024",
+  "role": "Full Stack Developer",
+  "tools": ["VSCode", "Postman", "GitHub", "Redux DevTools", "WebRTC Debug Tools"],
+  "challenges": [
+    "Implementing reliable peer-to-peer connections using WebRTC",
+    "Optimizing video and audio quality for different network conditions",
+    "Managing multiple simultaneous video streams",
+    "Ensuring cross-browser compatibility for WebRTC features"
+  ]
+}

@@ -22,7 +22,7 @@ export default function RootLayout({
     <ViewTransitions>
       
     <html lang="en">
-      <body className={`${inter.className} antialiased bg-neutral-100`}>
+      <body className={`${inter.className} antialiased bg-neutral-100 [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-700`}>
 <Navbar />
         {children}
               <Footer/>

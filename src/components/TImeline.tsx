@@ -47,7 +47,7 @@ const Timeline = () => {
     ];
 
     return (
-        <div ref={ref} className="py-10">
+        <div ref={ref} className="py-4 my-6 px-4 shadow-minimal-inner border-y border-neutral-100 ">
             {
                 data.map((year, index) => (
                     <div  key={year.title} className='mb-4 '>

@@ -13,11 +13,11 @@ const nextConfig: NextConfig = {
         hostname:"imgs.search.brave.com"
       },
       {
-        hostname:"cdn1.roundasspics.com"
+        hostname:"via.placeholder.com"
       },
       {
         hostname:"images.unsplash.com"
-      },
+      }
     ]
   }
 };

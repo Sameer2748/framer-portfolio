@@ -1,0 +1,30 @@
+{
+    "title": "2d Metaverse",
+    "description": "A portal to explore the virtual metaverse, allowing users to interact with immersive 3D environments through browser-based XR experiences. Users can navigate personalized spaces with avatars, initiate face-to-face video calls in real-time, and collaborate inside spatial meeting rooms.",
+    "technologies": ["React", "Next.js", "motion", "TailwindCSS", "WebSocket", "PostgreSQL", "Prisma"],
+    "image": "/2d-metaverse.png",
+    "images": ["/metaverse-1.png", "/metaverse-2.png", "/metaverse-3.png", "/metaverse-4.png", "/metaverse-5.png", "/metaverse-6.png", "/metaverse-7.png", "/2d-metaverse.png"],
+    "github": "https://github.com/Sameer2748/2D-Metaverse",
+    "live": "https://metaverse.100xsam.store/dashboard",
+    "features": [
+      "Real-time 3D rendering in the browser",
+      "Interactive map with avatar-based navigation",
+      "Personalized chat in virtual spaces",
+      "One-on-one video calls between avatars",
+      "Multi-user video conferencing in each space",
+      "Modular scene system with reusable components",
+      "User movement and interaction tracking"
+    ],
+    "duration": "Feb 2024 – Apr 2024",
+    "role": "Full Stack Developer",
+    "tools": ["VSCode", "Figma", "GitHub", "Chrome DevTools"],
+    "challenges": [
+      "Optimizing performance for complex 3D scenes",
+      "Implementing WebRTC-based video calls within avatar interaction",
+      "Maintaining real-time interactions across multiple users",
+      "Ensuring smooth cross-browser compatibility",
+      "Maintaining responsiveness with Tailwind in 3D layout contexts"
+    ]
+  }
+  
+

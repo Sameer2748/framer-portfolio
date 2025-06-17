@@ -6,7 +6,7 @@ import SectionHeading from './Section-Heading'
 const Testimonials = () => {
     
   return (
-    <div className='py-10'>
+    <div className='py-4 px-4 shadow-minimal-inner border-y border-neutral-100  my-4'>
         <SectionHeading delay={0.8} className='pb-4'>
         I'm a software developer with passion for building scalable and effecient systems.
         </SectionHeading>

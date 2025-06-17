@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Heading from "@/components/Heading";
+import Scales from "@/components/Scales";
 import SubHeading from "@/components/SubHeading";
 import { getAllBlogs } from "@/utils/mdx";
 import { Metadata } from "next";
@@ -24,10 +25,11 @@ export default async function BlogsPage() {
 
   return (
     <div className="min-h-screen flex justify-start items-start">
-      <Container className="min-h-screen px-10 md:pt-20 md:pb-10">
+      <Container className="relative min-h-screen px-8 md:pt-20 md:pb-10">
+        <Scales />
         <Heading>All Blogs</Heading>
         <SubHeading>I'm a software developer with passion for building scalable and effecient systems. I'm currently working as full stack developer at StoryTent</SubHeading>
-        <div className="flex flex-col gap-8 py-10">
+        <div className="flex flex-col gap-8 py-10 px-4">
           {
             allBlogs.map((blog, idx) => (
               <Link href={`/blog/${blog.slug}`} key={idx}>

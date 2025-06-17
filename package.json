@@ -17,6 +17,7 @@
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
     "deps": "^1.0.0",
+    "emailjs-com": "^3.2.0",
     "motion": "^12.16.0",
     "next": "15.3.3",
     "next-mdx-remote": "^5.0.0",
@@ -24,7 +25,10 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-fast-marquee": "^1.6.5",
+    "react-icons": "^5.5.0",
+    "react-responsive-carousel": "^3.2.23",
     "sonner": "^2.0.5",
+    "swiper": "^11.2.8",
     "tailwind-merge": "^3.3.0",
     "tw-animate-css": "^1.3.4"
   },

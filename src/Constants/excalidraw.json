@@ -1,0 +1,29 @@
+{
+    "title": "Chitarkar",
+    "description": "A modern web-based drawing application inspired by Excalidraw, featuring a minimal interface for creating hand-drawn like diagrams and sketches with real-time collaboration capabilities. It supports multiple shapes, text elements, and design customization.",
+    "technologies": ["React", "Next.js", "motion", "TailwindCSS", "WebSocket", "PostgreSQL", "Prisma"],
+    "image": "/excalidraw.png",
+    "images": ["/excal-1.png", "/excal-2.png", "/excal-3.png", "/excal-4.png", "/excalidraw.png", "/excal-5.png"],
+    "github": "https://github.com/Sameer2748/Excalidraw",
+    "live": "https://excalfnt.100xsam.store/signIn",
+    "features": [
+      "Freehand drawing and pre-defined shape tools",
+      "Real-time collaborative drawing using Socket.io",
+      "Custom color palette, font styles, and stroke width options",
+      "Support for adding text and annotations",
+      "Export drawings as PNG/SVG formats",
+      "Undo/Redo functionality",
+      "Dark mode support",
+      "Multi-user drawing on same canvas"
+    ],
+    "duration": "Jan 2024 – Mar 2024",
+    "role": "Frontend Developer",
+    "tools": ["VSCode", "Figma", "GitHub", "Chrome DevTools", "Socket.io Dev Tools"],
+    "challenges": [
+      "Implementing smooth and responsive freehand drawing with Canvas API",
+      "Managing real-time sync and conflict resolution between multiple users",
+      "Optimizing performance for large and complex drawings",
+      "Handling different screen resolutions, zoom levels, and canvas scaling",
+      "Ensuring consistent drawing state across devices"
+    ]
+  }
