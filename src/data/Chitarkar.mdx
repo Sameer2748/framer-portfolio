@@ -1,0 +1,97 @@
+---
+title: 'Chitarkar – Collaborative Drawing App'
+description: 'A modern drawing application inspired by Excalidraw with real-time collaboration, shape tools, annotations, and a minimal interface.'
+image: '/excalidraw.png'
+date: '2024-03-30'
+---
+
+# Chitarkar – Real-Time Collaborative Drawing Tool
+
+## Overview
+
+**Chitarkar** is a modern, browser-based drawing and sketching platform inspired by Excalidraw. It enables users to create clean, hand-drawn-style diagrams and illustrations in a minimal, intuitive interface. With real-time collaborative features powered by WebSockets, multiple users can draw on the same canvas simultaneously.
+
+---
+
+## 🛠 Technologies Used
+
+- **Frontend**: React, Next.js, TailwindCSS, Framer Motion  
+- **Backend**: WebSocket (Socket.io), PostgreSQL, Prisma  
+- **Canvas Logic**: HTML5 Canvas API  
+- **Dev Tools**: VSCode, Figma, Chrome DevTools, Socket.io Dev Tools
+
+---
+
+## 🚀 Live Demo
+
+🔗 [Live Project](https://excalfnt.100xsam.store/signIn)  
+💻 [GitHub Repo](https://github.com/Sameer2748/Excalidraw)
+
+---
+
+## ✨ Key Features
+
+- ✏️ **Freehand drawing and shape tools** including lines, rectangles, circles  
+- 👥 **Multi-user real-time collaboration** with conflict resolution  
+- 🎨 **Custom color palette**, stroke width, and font options  
+- 📝 **Text and annotation support** within the canvas  
+- 💾 **Export canvas as PNG or SVG**  
+- ↩️ **Undo / Redo support**  
+- 🌙 **Dark mode UI toggle**
+
+---
+
+## 🖼️ Visuals
+
+![](/excal-1.png)  
+![](/excal-2.png)  
+![](/excal-3.png)  
+![](/excal-4.png)  
+![](/excalidraw.png)  
+![](/excal-5.png)
+
+---
+
+## 🧩 Project Architecture
+
+### 🖥 Frontend
+- Built in **Next.js** for routing and page handling
+- Custom drawing logic using **Canvas API**
+- Dynamic styling and responsive layout via **TailwindCSS**
+- UI interactions animated with **Framer Motion**
+
+### 🔌 Backend
+- Real-time syncing handled by **Socket.io**
+- User session, room, and state management stored in **PostgreSQL** via **Prisma**
+- Conflict management and drawing state sync using WebSocket channels
+
+---
+
+## ⏳ Project Duration
+
+📅 **Jan 2024 – Mar 2024**  
+👨‍💻 **Role**: Frontend Developer
+
+---
+
+## ⚔️ Challenges Tackled
+
+- 🖊️ **Implementing smooth and responsive drawing** with support for multiple tools
+- 🔁 **Synchronizing canvas state** across multiple users in real-time
+- 🧠 **Handling undo/redo operations** and history stacks per user
+- 🔍 **Managing resolution scaling and zooming** for varying devices
+- 🧩 **Optimizing performance** for dense and large-scale drawings
+
+---
+
+## 📂 Folder Structure (Simplified)
+
+```bash
+chitarkar/
+├── components/       # UI and tool components (Toolbox, Canvas, Export)
+├── pages/            # Next.js page routing
+├── public/           # Static assets
+├── hooks/            # Custom hooks for drawing and WebSocket
+├── prisma/           # Schema and DB logic
+├── styles/           # Tailwind and global styles
+└── utils/            # Drawing and canvas logic utilities
