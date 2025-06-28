@@ -10,6 +10,7 @@ import Testimonials from "@/components/Testimonials";
 import Scales from "@/components/Scales";
 
 export default function Home() {
+console.log("home page");
 
   return (
     <div className="min-h-screen flex justify-start items-start  ">
