@@ -10,8 +10,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen flex justify-start items-start">
-      <Container className="relative min-h-screen px-8 md:pt-20 md:pb-10">
-        <Scales />
+      <Container className="relative min-h-screen pt-20 px-4 md:px-8 md:pt-20 md:pb-10 bg-woodsmoke-100">
+      <Scales />
         <Heading>Contact Me</Heading>
         <SubHeading>I'm open to freelance offers. Reach out to me to inquire more about my work.</SubHeading>
         <ContactForm />

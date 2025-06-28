@@ -17,41 +17,41 @@ const Timeline = () => {
     const isInView = useInView(ref, { once: true, amount: 0.6 });
     const data: Data[] = [
         {
-            title: "2025",
+            title: "June 2025 - current",
             content: [
-                {
-                    title: "Reached $20K MRR with my VSCode fork.",
-                    description: "Reached the raven"
-                },
-                // Add more achievements for 2025 here
-            ],
-        },
+              {
+                title: "Full Stack Developer at Jan Suraaj Party (JSP)",
+                description: "Managing web and DevOps, using AWS, Next.js, Docker, PostgreSQL, TypeScript, and TailwindCSS."
+              }
+            ]
+          },
         {
-            title: "2024",
+            title: "Jan 2025 - May 2025",
             content: [
                 {
-                    title: "Launched my first SaaS product",
-                    description: "Successfully deployed and got first paying customers"
-                },
-            ],
-        },
+                    title: "Web & Admin Management at BaracksBuddy",
+                    description: "Worked for 5 months in 2024. Managed website (Next.js) and admin management for live class features, using AWS."
+                  }
+            ]
+          },
         {
-            title: "2023",
+            title: "June 2024 - June 2025",
             content: [
                 {
-                    title: "Started learning web development",
-                    description: "Began journey with React and Next.js"
-                },
-            ],
-        },
+                    title: "Full Stack Developer at StoryTent",
+                    description: "Managed web app and DevOps, using React, Next.js, React Native, TailwindCSS, AWS, and PostgreSQL."
+                  }
+            ]
+          },
+       
     ];
 
     return (
-        <div ref={ref} className="py-4 my-6 px-4 shadow-minimal-inner border-y border-neutral-100 ">
+        <div ref={ref} className="py-4 my-6 px-4 shadow-minimal-inner dark:shadow-none dark:border-woodsmoke-800  border-y border-neutral-100 ">
             {
                 data.map((year, index) => (
                     <div  key={year.title} className='mb-4 '>
-                        <motion.h2 animate={{ filter: isInView ? 'blur(0px)' : 'blur(10px)', opacity: isInView ? 1 : 0 }} transition={{ ease: easeInOut, duration: 0.3, delay: 0.1 * index }} className='font-bold text-black px-2 py-0.5 mb-2 rounded-md shadow-box w-fit  '>
+                        <motion.h2 animate={{ filter: isInView ? 'blur(0px)' : 'blur(10px)', opacity: isInView ? 1 : 0 }} transition={{ ease: easeInOut, duration: 0.3, delay: 0.1 * index }} className='font-bold text-black px-2 py-0.5 mb-2 rounded-md shadow-box w-fit dark:text-woodsmoke-200 '>
                             {year.title}
                         </motion.h2>
                         <div className="flex flex-col gap-4">
@@ -59,11 +59,11 @@ const Timeline = () => {
                                 year.content.map((item, idx) => (
                                     <div key={idx} className='pl-4'>
                                         <Steps isInView={isInView} idx={idx}>
-                                        <motion.h3 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }} transition={{ duration: 0.3, ease: easeInOut, delay: 0.2 * idx }} className='text-neutral-600'>{item.title}</motion.h3>
+                                        <motion.h3 animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }} transition={{ duration: 0.3, ease: easeInOut, delay: 0.2 * idx }} className='text-neutral-600 dark:text-woodsmoke-400'>{item.title}</motion.h3>
                                         </Steps>
                                         {
                                             item.description && 
-                                            <motion.p animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }} transition={{ duration: 0.3, ease: easeInOut, delay: 0.3  * idx }} className='text-neutral-400 text-sm pt-2 pl-4 '>{item.description}</motion.p>
+                                            <motion.p animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : -10 }} transition={{ duration: 0.3, ease: easeInOut, delay: 0.3  * idx }} className='text-neutral-400 text-sm pt-2 pl-4 dark:text-woodsmoke-400'>{item.description}</motion.p>
                                         }
                                     </div>
                                 ))

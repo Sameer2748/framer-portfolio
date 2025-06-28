@@ -1,12 +1,29 @@
-import React from 'react'
+"use client";
+import React from "react";
+import { useTheme } from "next-themes";
+import clsx from "clsx";
 
 const Scales = () => {
+  const { theme } = useTheme();
+
+  const leftClasses = clsx(
+    "absolute left-0 top-0 w-4 md:w-8 h-full",
+    "bg-[size:10px_14px] bg-fixed z-10 transition-all duration-300 ease-in-out",
+    theme === "dark" ? "border-x-[var(--pattern-fg)] bgpattern-dark" : "border-x-[var(--pattern-sm)] bg-pattern"
+  );
+
+  const rightClasses = clsx(
+    "absolute right-0 top-0 w-4 md:w-8 h-full",
+    "bg-[size:10px_14px] bg-fixed z-10 transition-all duration-300 ease-in-out",
+    theme === "dark" ? "border-x-[var(--pattern-fg)] bgpattern-dark" : "border-x-[var(--pattern-sm)] bg-pattern"
+  );
+
   return (
     <>
-      <div className="absolute right-0 top-0 w-8 h-full border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
-        <div className="absolute left-0 top-0 w-8 h-full border-x border-x-(--pattern-fg) bg-[image:repeating-linear-gradient(315deg,_var(--pattern-fg)_0,_var(--pattern-fg)_1px,_transparent_0,_transparent_50%)] bg-[size:10px_10px] bg-fixed"></div>
+      <div className={leftClasses} />
+      <div className={rightClasses} />
     </>
-  )
-}
+  );
+};
 
-export default Scales
+export default Scales;

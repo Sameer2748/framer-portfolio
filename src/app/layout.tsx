@@ -4,9 +4,10 @@ import "./globals.css";
 import Navbar from "@/components/navbar";
 import { ViewTransitions } from "next-view-transitions";
 import Footer from "@/components/Footer";
-import {Toaster} from "sonner"
+import { Toaster } from "sonner"
+import { ThemeProvider } from "next-themes"
 
-const inter = Inter({subsets: ['latin'],weight:['400', '500' ,'600', '700','800','900']})
+const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700', '800', '900'] })
 
 export const metadata: Metadata = {
   title: "Sameer Rao",
@@ -20,15 +21,17 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      
-    <html lang="en">
-      <body className={`${inter.className} antialiased bg-neutral-100 [--pattern-fg:var(--color-neutral-950)]/5 dark:bg-neutral-700`}>
-<Navbar />
-        {children}
-              <Footer/>
-<Toaster position="top-center"/>
-      </body>
-    </html>
+
+      <html lang="en" suppressHydrationWarning>
+          <ThemeProvider attribute="class"  >
+        <body className={`${inter.className} antialiased bg-woodsmoke-950   `}>
+          <Navbar />
+            {children}
+          <Footer />
+          <Toaster position="top-center" />
+        </body>
+          </ThemeProvider>
+      </html>
     </ViewTransitions>
   );
 } 

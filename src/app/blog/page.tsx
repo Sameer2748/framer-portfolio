@@ -25,7 +25,7 @@ export default async function BlogsPage() {
 
   return (
     <div className="min-h-screen flex justify-start items-start">
-      <Container className="relative min-h-screen px-8 md:pt-20 md:pb-10">
+      <Container className="relative min-h-screen pt-20 px-4 md:px-8 md:pt-20 md:pb-10 bg-woodsmoke-100">
         <Scales />
         <Heading>All Blogs</Heading>
         <SubHeading>I'm a software developer with passion for building scalable and effecient systems. I'm currently working as full stack developer at StoryTent</SubHeading>
@@ -34,19 +34,19 @@ export default async function BlogsPage() {
             allBlogs.map((blog, idx) => (
               <Link href={`/blog/${blog.slug}`} key={idx}>
                 <div className="flex  items-center justify-between ">
-                  <h2 className="text-primary text-2xl font-bold tracking-tight md:text-4xl">{blog.title}</h2>
-{blog.date && (
-  <p className="text-secondary text-sm md:text-sm">
-    {new Date(blog.date).toLocaleDateString("en-us", {
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-    })}
-  </p>
-)}
+                  <h2 className="text-primary text-2xl font-bold tracking-tight md:text-4xl dark:text-woodsmoke-300">{blog.title}</h2>
+                  {blog.date && (
+                    <p className="text-secondary text-sm md:text-sm dark:text-woodsmoke-400">
+                      {new Date(blog.date).toLocaleDateString("en-us", {
+                        weekday: "long",
+                        year: "numeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </p>
+                  )}
                 </div>
-                <p className="text-secondary max-w-lg  pt-2 text-sm md:text-sm ">{truncate(blog.description || "", 150)} </p>
+                <p className="text-secondary max-w-lg  pt-2 text-sm md:text-sm dark:text-woodsmoke-400 ">{truncate(blog.description || "", 150)} </p>
               </Link>
             ))
           }

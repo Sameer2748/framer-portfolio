@@ -6,7 +6,7 @@ import SectionHeading from './Section-Heading'
 const Testimonials = () => {
     
   return (
-    <div className='py-4 px-4 shadow-minimal-inner border-y border-neutral-100  my-4'>
+    <div className='py-4 px-4 shadow-minimal-inner border-y border-neutral-100 dark:shadow-none dark:border-woodsmoke-700  my-4'>
         <SectionHeading delay={0.8} className='pb-4'>
         I'm a software developer with passion for building scalable and effecient systems.
         </SectionHeading>
@@ -25,11 +25,11 @@ const Testimonials = () => {
 
 const TestimonialCard = ({quote, name, avatar}:{quote:string, name:string, avatar: string})=>{
 return (
-    <div className=" gap-4 shadow-box flex flex-col  justify-between w-full h-60 max-w-60 mx-4 my-2 p-4 rounded-xl hover:shadow-md transition duration-300  ">
-        <h1 className='text-sm text-neutral-700'>{quote}</h1>
+    <div className=" gap-4 shadow-box flex flex-col dark:bg-[#27272a]  justify-between w-full h-60 max-w-60 mx-4 my-2 p-4 rounded-xl hover:shadow-md transition duration-300  ">
+        <h1 className='text-sm text-neutral- dark:text-woodsmoke-400'>{quote}</h1>
         <div className='flex items-center gap-4 '>
             <img src={avatar} className='size-6 rounded-full object-cover ' alt="" />
-            <p className='text-sm text-neutral-500'>{name}</p>
+            <p className='text-sm text-neutral-500 dark:text-woodsmoke-300'>{name}</p>
         </div>
     </div>
 )

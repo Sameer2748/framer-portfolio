@@ -45,22 +45,22 @@ const ContactForm = () => {
 };
 
     return (
-        <form className='py-10  mx-auto shadow-minimal-inner border-y border-neutral-100 ' onSubmit={handleSubmit}>
+        <form className='py-10  mx-auto shadow-minimal-inner border-y border-neutral-100 dark:shadow-none mt-2  ' onSubmit={handleSubmit}>
             <div className="max-w-lg mx-auto flex flex-col gap-6">
 
-            <div className="flex flex-col  gap-2">
-                <label htmlFor="name" className='text-sm font-medium text-neutral-600 tracking-tight  '>Full name</label>
-                <input type="text" id="name" name="name" className='shadow-box  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary  ' onChange={handleFOrmChange} placeholder='Sameer Rao' />
+            <div className="flex flex-col  gap-2 ">
+                <label htmlFor="name" className='text-sm font-medium text-neutral-600 tracking-tight dark:text-woodsmoke-300  '>Full name</label>
+                <input type="text" id="name" name="name"  className='shadow-box  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-1 dark:border-woodsmoke-400 dark:placeholder-woodsmoke-500 ' onChange={handleFOrmChange} placeholder='Sameer Rao' />
             </div>
             <div className="flex flex-col  gap-2">
-                <label htmlFor="email" className='text-sm font-medium text-neutral-600 tracking-tight  '>Email Address</label>
-                <input type="email" id="email" name="email" className='shadow-box  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary  ' onChange={handleFOrmChange} placeholder='mrao27488@gmail.com' />
+                <label htmlFor="email" className='text-sm font-medium text-neutral-600 tracking-tight dark:text-woodsmoke-300  '>Email Address</label>
+                <input type="email" id="email" name="email" className='shadow-box  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-1 dark:border-woodsmoke-400 dark:placeholder-woodsmoke-500' onChange={handleFOrmChange} placeholder='mrao27488@gmail.com' />
             </div>
             <div className="flex flex-col  gap-2">
-                <label htmlFor="message" className='text-sm font-medium text-neutral-600 tracking-tight  '>Message</label>
-                <textarea rows={5} id="message" name="message" className='shadow-box resize-none  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary  ' onChange={handleFOrmChange} placeholder='I wanna dicuss a project...' />
+                <label htmlFor="message" className='text-sm font-medium text-neutral-600 tracking-tight dark:text-woodsmoke-300  '>Message</label>
+                <textarea rows={5} id="message" name="message" className='shadow-box resize-none  p-2 py-1 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:border-1 dark:border-woodsmoke-400 dark:placeholder-woodsmoke-500' onChange={handleFOrmChange} placeholder='I wanna dicuss a project...' />
             </div>
-            <button type='submit' className='bg-primary rounded-md px-4 py-2 text-white'>Submit</button>
+            <button type='submit' className='bg-primary rounded-md px-4 py-2 text-white dark:bg-[#27272a] dark:text-woodsmoke-300'>Submit</button>
             </div>
         </form>
     )
